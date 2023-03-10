@@ -30,10 +30,10 @@ namespace teste
         {
             
         }
-        public static void abre_curso()
+        public static void abre_pg_curso()
         {
            
-            Application.Run(new cursos());
+            Application.Run(new cursos_pg());
         }
         public static void abre_lab()
         {
@@ -43,7 +43,7 @@ namespace teste
 
         private void label2_Click(object sender, EventArgs e)
         {
-            System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(abre_curso));
+            System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(abre_pg_curso));
             t.Start();
             this.Close();
           
@@ -79,6 +79,11 @@ namespace teste
             System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(abre_lab));
             t.Start();
             this.Close();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

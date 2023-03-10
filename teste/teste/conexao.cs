@@ -62,7 +62,8 @@ namespace teste
         public DataTable Getcursos(int a)
         {
             MySqlConnection conexao = getconexao();
-            string SQL = "select id_curso,nome_curso,requisitos,descricao,localizacao,preco,carga_horaria,tb_tipo_curso.tipo_curso,tb_modalidade.modalidade,tb_turno.tipo_turno from tb_curso inner join tb_tipo_curso on tb_curso.id_tipo_curso=tb_tipo_curso.id_tipo_curso inner join tb_modalidade on tb_curso.id_modalidade=tb_modalidade.id_modalidade inner join tb_turno on tb_curso.id_turno=tb_turno.id_turno where tb_tipo_curso.id_tipo_curso=" + a;
+            string SQL = "select nome_curso from tb_curso where nome_curso = 'Curso Técnico em Edificações'";
+            //string SQL = "select id_curso,nome_curso,requisitos,profissao,op_trabalho,q_vai_aprender,preco,carga_horaria,tb_tipo_curso.tipo_curso,tb_modalidade.modalidade from tb_curso inner join tb_tipo_curso on tb_curso.id_tipo_curso=tb_tipo_curso.id_tipo_curso inner join tb_modalidade on tb_curso.id_modalidade=tb_modalidade.id_modalidade where tb_tipo_curso.id_tipo_curso=" + a;
             conexao.Open();
             MySqlCommand comando = new MySqlCommand(SQL, conexao);
             MySqlDataAdapter dados = new MySqlDataAdapter(comando);
