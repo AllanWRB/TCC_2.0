@@ -1,7 +1,9 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +14,7 @@ namespace teste
 {
     public partial class cursos_pg : Form
     {
+        conexao con = new conexao();
         public cursos_pg()
         {
             InitializeComponent();
@@ -25,7 +28,7 @@ namespace teste
         public static void abre_cursos()
         {
 
-            Application.Run(new cursos());
+            Application.Run(new cursos_pg());
         }
         
         private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
@@ -46,24 +49,42 @@ namespace teste
             t.Start();
             this.Close();
         }
+
+        private void cursos_pg_Load(object sender, EventArgs e)
+        {
+            MySqlConnection Conexao = con.getconexao();// chama a conexão mysql
+            Conexao.Open();//abre conexao
+            string query = "select * from tb_curso ";//nome da consulta
+            MySqlCommand comando = new MySqlCommand(query, Conexao);//comando sql para montar
+
+            MySqlDataReader registro = comando.ExecuteReader();//ler os dados da consulta
+
+
+
+
+            while (registro.Read())//ler 1 registro
+            {
+                Panel cursos = new Panel()
+                {
+                    BorderStyle = BorderStyle.FixedSingle,
+                   
+                };
+                Label nome_curso = new Label()
+             
+                {
+                  AutoSize=true
+
+                };
+                nome_curso.Text = registro.GetString("nome_curso");
+                cursos.Controls.Add(nome_curso);
+                painel_r.Controls.Add(cursos);
+
+            }
+
+            
+            
+            Conexao.Close();
+        }
     }
-    /*private void cursos_Load(object sender, EventArgs e)
-    {
-        MySqlConnection Conexao = con.getconexao();// chama a conexão mysql
-        Conexao.Open();//abre conexao
-        string query = "select nome_curso from tb_curso where id_curso=1";//nome da consulta
-        MySqlCommand comando = new MySqlCommand(query, Conexao);//comando sql para montar
+    }
 
-        MySqlDataReader registro = comando.ExecuteReader();//ler os dados da consulta
-
-
-
-
-        while (registro.Read())//ler 1 registro
-
-            label3.Text = Convert.ToString(registro["nome_curso"]) + "\n";//pega o registro e monstra no label
-
-
-        Conexao.Close();
-    }*/
-}
