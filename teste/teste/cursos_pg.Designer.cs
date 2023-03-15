@@ -216,7 +216,7 @@
             // 
             this.painel_r.Location = new System.Drawing.Point(6, 6);
             this.painel_r.Name = "painel_r";
-            this.painel_r.Size = new System.Drawing.Size(793, 103);
+            this.painel_r.Size = new System.Drawing.Size(793, 268);
             this.painel_r.TabIndex = 0;
             // 
             // cursos_pg

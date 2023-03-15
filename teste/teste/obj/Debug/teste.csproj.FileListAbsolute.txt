@@ -51,7 +51,6 @@ C:\Users\Aluno\Documents\GitHub\TCC_2.0\teste\teste\bin\Debug\System.Memory.xml
 C:\Users\Aluno\Documents\GitHub\TCC_2.0\teste\teste\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\Aluno\Documents\GitHub\TCC_2.0\teste\teste\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Aluno\Documents\GitHub\TCC_2.0\teste\teste\obj\Debug\teste.csprojAssemblyReference.cache
-C:\Users\Aluno\Documents\GitHub\TCC_2.0\teste\teste\obj\Debug\teste.cursos.resources
 C:\Users\Aluno\Documents\GitHub\TCC_2.0\teste\teste\obj\Debug\teste.cursos_pg.resources
 C:\Users\Aluno\Documents\GitHub\TCC_2.0\teste\teste\obj\Debug\teste.Form1.resources
 C:\Users\Aluno\Documents\GitHub\TCC_2.0\teste\teste\obj\Debug\teste.lab.resources
