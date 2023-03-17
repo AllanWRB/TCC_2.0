@@ -12,16 +12,12 @@ namespace teste
 {
     class conexao
     {
-
-
-
-
-
+        //variavel de texto statica privada
         static private string servidor = "localhost";
         static private string bancodedados = "tcc";
         static private string usuario = "root";
         static private string senha = "";
-
+                             //caminho para a conexao do banco
         static private string StrCon = "server=" + servidor + ";database=" + bancodedados + ";user id=" + usuario + ";password=" + senha;
         public MySqlConnection getconexao()
         {
