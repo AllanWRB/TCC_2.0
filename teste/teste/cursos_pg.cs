@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.LinkLabel;
 
 namespace teste
 {
@@ -49,6 +50,11 @@ namespace teste
             t.Start();
             this.Close();
         }
+        public static void Abre_tela_c()
+        {
+
+            Application.Run(new tela_c());
+        }
 
         private void cursos_pg_Load(object sender, EventArgs e)
         {
@@ -82,9 +88,6 @@ namespace teste
                 {
                     AutoSize = true,
 
-                    
-
-
 
             };
                 Label tipo_curso = new Label()
@@ -94,8 +97,29 @@ namespace teste
 
                 };
 
-                
+                Button curso_pg = new Button()
+
+                {
+                    AutoSize = true
+
+                };
+
+
                 nome_curso.Text = registro.GetString("nome_curso");
+
+                nome_curso.Click += delegate {
+                    System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(Abre_tela_c));
+                    t.Start();
+                    this.Close();
+                };
+                //cursos.Click += Abre_tela_c();
+
+               
+
+
+
+
+
                 preco.Text = Convert.ToString(registro.GetDecimal("preco"));
                 tipo_curso.Text = registro.GetString("tipo_curso");
                 cursos.Controls.Add(nome_curso);
