@@ -98,3 +98,4 @@ C:\Users\joaof\OneDrive\Documentos\GitHub\TCC_2.0\teste\teste\obj\Debug\teste.ex
 C:\Users\joaof\OneDrive\Documentos\GitHub\TCC_2.0\teste\teste\obj\Debug\teste.pdb
 C:\Users\Aluno\Documents\GitHub\TCC_2.0\teste\teste\obj\Debug\teste.csproj.AssemblyReference.cache
 C:\Users\Aluno\Documents\GitHub\TCC_2.0\teste\teste\obj\Debug\teste.csproj.SuggestedBindingRedirects.cache
+C:\Users\joaof\OneDrive\Documentos\GitHub\TCC_2.0\teste\teste\obj\Debug\teste.tela_c.resources

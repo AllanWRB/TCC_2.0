@@ -50,17 +50,19 @@ namespace teste
             t.Start();
             this.Close();
         }
-        public static void Abre_tela_c()
+        public static void Abre_tela_c(int id_curso)
         {
 
-            Application.Run(new tela_c());
+            tela_c cursos_exibidos = new tela_c(id_curso);
+            cursos_exibidos.ShowDialog();
+
         }
 
         private void cursos_pg_Load(object sender, EventArgs e)
         {
             MySqlConnection Conexao = con.getconexao();// chama a conexão mysql
             Conexao.Open();//abre conexao
-            string query = "select nome_curso,preco,tb_tipo_curso.tipo_curso from tb_curso inner join tb_tipo_curso on tb_tipo_curso.id_tipo_curso=tb_curso.id_tipo_curso  ";//nome da consulta
+            string query = "select id_curso,nome_curso,preco,tb_tipo_curso.tipo_curso from tb_curso inner join tb_tipo_curso on tb_tipo_curso.id_tipo_curso=tb_curso.id_tipo_curso  ";//nome da consulta
             MySqlCommand comando = new MySqlCommand(query, Conexao);//comando sql para montar
 
             MySqlDataReader registro = comando.ExecuteReader();//ler os dados da consulta
@@ -107,11 +109,8 @@ namespace teste
 
                 nome_curso.Text = registro.GetString("nome_curso");
 
-                nome_curso.Click += delegate {
-                    System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(Abre_tela_c));
-                    t.Start();
-                    this.Close();
-                };
+                cursos.Click += new EventHandler((sender1,e1)=> cursosClick(sender1 ,e1, registro.GetInt32("id_curso")));
+            
                 //cursos.Click += Abre_tela_c();
 
                
@@ -139,11 +138,22 @@ namespace teste
             
             Conexao.Close();
         }
+
+        private void cursosClick(object sender, EventArgs e, int id_curso)
+        {
+
+            Abre_tela_c(id_curso);
+
+
+
+        }
+
         public void espaco(Label label,int pos)
         {
             label.Location = new Point(label.Location.X, (label.Location.Y + pos));
             label.Refresh();
         }
+
     }
     }
 
