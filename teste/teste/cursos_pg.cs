@@ -15,6 +15,7 @@ namespace teste
 {
     public partial class cursos_pg : Form
     {
+        int id_cursod;
         conexao con = new conexao();
         public cursos_pg()
         {
@@ -60,83 +61,7 @@ namespace teste
 
         private void cursos_pg_Load(object sender, EventArgs e)
         {
-            MySqlConnection Conexao = con.getconexao();// chama a conexão mysql
-            Conexao.Open();//abre conexao
-            string query = "select id_curso,nome_curso,preco,tb_tipo_curso.tipo_curso from tb_curso inner join tb_tipo_curso on tb_tipo_curso.id_tipo_curso=tb_curso.id_tipo_curso  ";//nome da consulta
-            MySqlCommand comando = new MySqlCommand(query, Conexao);//comando sql para montar
-
-            MySqlDataReader registro = comando.ExecuteReader();//ler os dados da consulta
-
-
-
-
-            while (registro.Read())//ler 1 registro
-            {
-                Panel cursos = new Panel()
-                {
-                    BorderStyle = BorderStyle.FixedSingle,
-                    AutoSize = true
-
-                };
-
-                Label nome_curso = new Label()
-             
-                {
-                  AutoSize=true
-
-                };
-                Label preco = new Label()
-
-                {
-                    AutoSize = true,
-
-
-            };
-                Label tipo_curso = new Label()
-
-                {
-                    AutoSize = true
-
-                };
-
-                Button curso_pg = new Button()
-
-                {
-                    AutoSize = true
-
-                };
-
-
-                nome_curso.Text = registro.GetString("nome_curso");
-
-                cursos.Click += new EventHandler((sender1,e1)=> cursosClick(sender1 ,e1, registro.GetInt32("id_curso")));
-            
-                //cursos.Click += Abre_tela_c();
-
-               
-
-
-
-
-
-                preco.Text = Convert.ToString(registro.GetDecimal("preco"));
-                tipo_curso.Text = registro.GetString("tipo_curso");
-                cursos.Controls.Add(nome_curso);
-
-                espaco(preco,25);
-                //preco.Location = new Point((int)preco.Location.X, (int)(preco.Location.Y - 50));
-               
-                cursos.Controls.Add(preco);
-          
-                cursos.Controls.Add(tipo_curso);
-                espaco(tipo_curso,50);
-                painel_r.Controls.Add(cursos);
-
-            }
-
-            
-            
-            Conexao.Close();
+            busca(box_nome.Text, box_preco.Text, box_duracao.Text, box_tp.Text, box_modalidade.Text);
         }
 
         private void cursosClick(object sender, EventArgs e, int id_curso)
@@ -154,6 +79,116 @@ namespace teste
             label.Refresh();
         }
 
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void B(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            busca(box_nome.Text,box_preco.Text,box_duracao.Text,box_tp.Text,box_modalidade.Text);
+        }
+        private void busca(string nome_curso,string preco,string duracao,string tipo_curso,string modalidade)
+        {
+            string query;
+            MySqlConnection Conexao = con.getconexao();// chama a conexão mysql
+            Conexao.Open();//abre conexao
+            if (nome_curso.ToString() != null)
+            {
+                query = "select tb_curso.id_curso,tb_curso.nome_curso,tb_curso.preco,tb_tipo_curso.tipo_curso from tb_curso inner join tb_tipo_curso on tb_tipo_curso.id_tipo_curso=tb_curso.id_tipo_curso where tb_curso.nome_curso like '%" + nome_curso.ToString() + "%'";//nome da consulta
+                painel_r.Update();
+            }
+            else
+            {
+                query = "select tb_curso.id_curso,tb_curso.nome_curso,tb_curso.preco,tb_tipo_curso.tipo_curso from tb_curso inner join tb_tipo_curso on tb_tipo_curso.id_tipo_curso=tb_curso.id_tipo_curso ";//nome da consulta
+
+            
+            MySqlCommand comando = new MySqlCommand(query, Conexao);//comando sql para montar
+
+            MySqlDataReader registro = comando.ExecuteReader();//ler os dados da consulta
+
+
+
+
+                while (registro.Read())//ler 1 registro
+                {
+
+
+                    Panel cursos = new Panel()
+                    {
+                        BorderStyle = BorderStyle.FixedSingle,
+                        AutoSize = true,
+                    };
+                    Label lbl_cursod = new Label()
+                    {
+
+                    };
+
+                    Label Lnome_curso = new Label()
+
+                    {
+                        AutoSize = true
+
+                    };
+                    Label Lpreco = new Label()
+
+                    {
+                        AutoSize = true,
+
+
+                    };
+                    Label Ltipo_curso = new Label()
+
+                    {
+                        AutoSize = true
+
+                    };
+
+                    Button curso_pg = new Button()
+
+                    {
+                        AutoSize = true
+
+                    };
+                    id_cursod = Convert.ToInt32(registro.GetInt32("id_curso"));
+                    lbl_cursod.Text = id_cursod.ToString();
+                    Lnome_curso.Text = registro.GetString("nome_curso");
+
+                    cursos.Click += new EventHandler((sender1, e1) => cursosClick(sender1, e1, Convert.ToInt32(lbl_cursod.Text)));
+
+                    //cursos.Click += Abre_tela_c();
+
+
+
+
+
+
+
+                    Lpreco.Text = Convert.ToString(registro.GetDecimal("preco"));
+                    Ltipo_curso.Text = registro.GetString("tipo_curso");
+                    cursos.Controls.Add(Lnome_curso);
+
+                    espaco(Lpreco, 25);
+                    //preco.Location = new Point((int)preco.Location.X, (int)(preco.Location.Y - 50));
+
+                    cursos.Controls.Add(Lpreco);
+
+                    cursos.Controls.Add(Ltipo_curso);
+                    espaco(Ltipo_curso, 50);
+                    painel_r.Controls.Add(cursos);
+                }
+
+            }
+
+
+
+            Conexao.Close();
+        }
     }
     }
 
