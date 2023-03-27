@@ -36,19 +36,19 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.box_pmax = new System.Windows.Forms.TextBox();
+            this.box_pmin = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.box_preco = new System.Windows.Forms.ComboBox();
             this.box_modalidade = new System.Windows.Forms.ComboBox();
             this.box_duracao = new System.Windows.Forms.ComboBox();
             this.box_tp = new System.Windows.Forms.ComboBox();
             this.box_nome = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.painel_r = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -145,13 +145,13 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.RoyalBlue;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.box_pmax);
+            this.panel2.Controls.Add(this.box_pmin);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.box_preco);
             this.panel2.Controls.Add(this.box_modalidade);
             this.panel2.Controls.Add(this.box_duracao);
             this.panel2.Controls.Add(this.box_tp);
@@ -162,6 +162,22 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(164, 552);
             this.panel2.TabIndex = 5;
+            // 
+            // box_pmax
+            // 
+            this.box_pmax.Location = new System.Drawing.Point(81, 137);
+            this.box_pmax.Name = "box_pmax";
+            this.box_pmax.Size = new System.Drawing.Size(47, 20);
+            this.box_pmax.TabIndex = 11;
+            this.box_pmax.KeyDown += new System.Windows.Forms.KeyEventHandler(this.box_pmax_KeyDown);
+            // 
+            // box_pmin
+            // 
+            this.box_pmin.Location = new System.Drawing.Point(19, 137);
+            this.box_pmin.Name = "box_pmin";
+            this.box_pmin.Size = new System.Drawing.Size(45, 20);
+            this.box_pmin.TabIndex = 10;
+            this.box_pmin.KeyDown += new System.Windows.Forms.KeyEventHandler(this.box_pmin_KeyDown);
             // 
             // label8
             // 
@@ -208,44 +224,51 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Nome";
             // 
-            // box_preco
-            // 
-            this.box_preco.FormattingEnabled = true;
-            this.box_preco.Location = new System.Drawing.Point(16, 143);
-            this.box_preco.Margin = new System.Windows.Forms.Padding(2);
-            this.box_preco.Name = "box_preco";
-            this.box_preco.Size = new System.Drawing.Size(110, 21);
-            this.box_preco.TabIndex = 4;
-            // 
             // box_modalidade
             // 
             this.box_modalidade.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.box_modalidade.FormattingEnabled = true;
+            this.box_modalidade.Items.AddRange(new object[] {
+            "Cursos Profissionalizantes",
+            "Cursos Superiores"});
             this.box_modalidade.Location = new System.Drawing.Point(16, 389);
             this.box_modalidade.Margin = new System.Windows.Forms.Padding(2);
             this.box_modalidade.Name = "box_modalidade";
             this.box_modalidade.Size = new System.Drawing.Size(112, 24);
             this.box_modalidade.TabIndex = 3;
+            this.box_modalidade.KeyDown += new System.Windows.Forms.KeyEventHandler(this.box_modalidade_KeyDown);
             // 
             // box_duracao
             // 
             this.box_duracao.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.box_duracao.FormattingEnabled = true;
+            this.box_duracao.Items.AddRange(new object[] {
+            "",
+            "18 meses",
+            "24 meses"});
             this.box_duracao.Location = new System.Drawing.Point(16, 223);
             this.box_duracao.Margin = new System.Windows.Forms.Padding(2);
             this.box_duracao.Name = "box_duracao";
             this.box_duracao.Size = new System.Drawing.Size(112, 24);
             this.box_duracao.TabIndex = 2;
+            this.box_duracao.KeyDown += new System.Windows.Forms.KeyEventHandler(this.box_duracao_KeyDown);
             // 
             // box_tp
             // 
             this.box_tp.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.box_tp.FormattingEnabled = true;
+            this.box_tp.Items.AddRange(new object[] {
+            "Curso Técnico",
+            "Curso Rapido",
+            "Aprendizagem Industrial",
+            "Graduação",
+            "Pos/MBA/Mestrado"});
             this.box_tp.Location = new System.Drawing.Point(16, 306);
             this.box_tp.Margin = new System.Windows.Forms.Padding(2);
             this.box_tp.Name = "box_tp";
             this.box_tp.Size = new System.Drawing.Size(112, 24);
             this.box_tp.TabIndex = 1;
+            this.box_tp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.box_tp_KeyDown);
             // 
             // box_nome
             // 
@@ -256,6 +279,7 @@
             this.box_nome.Name = "box_nome";
             this.box_nome.Size = new System.Drawing.Size(112, 23);
             this.box_nome.TabIndex = 0;
+            this.box_nome.KeyDown += new System.Windows.Forms.KeyEventHandler(this.box_nome_KeyDown);
             // 
             // panel3
             // 
@@ -276,16 +300,6 @@
             this.painel_r.Name = "painel_r";
             this.painel_r.Size = new System.Drawing.Size(793, 268);
             this.painel_r.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(38, 443);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // cursos_pg
             // 
@@ -319,7 +333,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox box_preco;
         private System.Windows.Forms.ComboBox box_modalidade;
         private System.Windows.Forms.ComboBox box_duracao;
         private System.Windows.Forms.ComboBox box_tp;
@@ -331,6 +344,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox box_pmax;
+        private System.Windows.Forms.TextBox box_pmin;
     }
 }
