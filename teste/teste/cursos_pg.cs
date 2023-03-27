@@ -102,7 +102,7 @@ namespace teste
 
             query = "select tb_curso.id_curso,tb_curso.nome_curso,tb_curso.preco,tb_tipo_curso.tipo_curso,tb_modalidade.id_modalidade from tb_curso inner join tb_tipo_curso on tb_tipo_curso.id_tipo_curso=tb_curso.id_tipo_curso inner join tb_modalidade on tb_modalidade.id_modalidade=tb_curso.id_modalidade"; 
             
-            if (box_nome.Text!="")
+            if (box_nome.Text!="" || box_pmin.Text != "" || box_pmax.Text != "" || box_duracao.Text != "" || box_tp.Text != "" || box_modalidade.Text != "")
             {
                 query += " where nome_curso like  '%" + box_nome.Text + "%'";
             }

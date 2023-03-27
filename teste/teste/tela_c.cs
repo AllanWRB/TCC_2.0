@@ -20,6 +20,30 @@ namespace teste
            _id_curso = id_curso;
             InitializeComponent();
         }
+        public static void abre_home()
+        {
+
+            Application.Run(new Form1());
+        }
+
+        public static void abre_cursos()
+        {
+
+            Application.Run(new cursos_pg());
+        }
+
+        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+            System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(abre_home));
+            t.Start();
+            this.Close();
+        }
+
 
         private void tela_c_Load(object sender, EventArgs e)
         {
@@ -29,17 +53,32 @@ namespace teste
             MySqlCommand comando = new MySqlCommand(query, Conexao);//comando sql para montar
             MySqlDataReader registro = comando.ExecuteReader();//ler os dados da consulta
             registro.Read();
+            lbl_NomeMenu.Text = registro.GetString("nome_curso");
             lbl_nome.Text = registro.GetString("nome_curso");
-            lbl_requisitos.Text = registro.GetString("requisitos");
-            lbl_requisitos.Text = registro.GetString("profissao");
+            lbl_req.Text = registro.GetString("requisitos");
+            lbl_prof.Text = registro.GetString("profissao");
             lbl_op_trabalho.Text = registro.GetString("op_trabalho");
             lbl_aprender.Text = registro.GetString("q_vai_aprender");
-            lbl_preco.Text = registro.GetString("preco");
-            lbl_hora.Text = registro.GetString("carga_horaria");
+            lbl_preco.Text += registro.GetString("preco");
+            lbl_hora.Text += registro.GetString("carga_horaria");
             lbl_tp_curso.Text = registro.GetString("tipo_curso");
             lbl_modalidade.Text = registro.GetString("modalidade");
             registro.Close();
             Conexao.Close();
+        }
+
+        private void label12_Click_1(object sender, EventArgs e)
+        {
+            System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(abre_cursos));
+            t.Start();
+            this.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(abre_home));
+            t.Start();
+            this.Close();
         }
     }
 }

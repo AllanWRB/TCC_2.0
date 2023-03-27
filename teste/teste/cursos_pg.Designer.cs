@@ -29,13 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.box_pmax = new System.Windows.Forms.TextBox();
             this.box_pmin = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -58,8 +57,6 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label10);
@@ -69,29 +66,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1032, 64);
             this.panel1.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(297, 33);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Cursos disponiveis";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(281, 33);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(13, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "/";
             // 
             // label12
             // 
@@ -145,6 +119,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.RoyalBlue;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.box_pmax);
             this.panel2.Controls.Add(this.box_pmin);
             this.panel2.Controls.Add(this.label8);
@@ -163,9 +138,19 @@
             this.panel2.Size = new System.Drawing.Size(164, 552);
             this.panel2.TabIndex = 5;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label9.Location = new System.Drawing.Point(77, 140);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(10, 13);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "-";
+            // 
             // box_pmax
             // 
-            this.box_pmax.Location = new System.Drawing.Point(81, 137);
+            this.box_pmax.Location = new System.Drawing.Point(90, 137);
             this.box_pmax.Name = "box_pmax";
             this.box_pmax.Size = new System.Drawing.Size(47, 20);
             this.box_pmax.TabIndex = 11;
@@ -173,7 +158,7 @@
             // 
             // box_pmin
             // 
-            this.box_pmin.Location = new System.Drawing.Point(19, 137);
+            this.box_pmin.Location = new System.Drawing.Point(28, 137);
             this.box_pmin.Name = "box_pmin";
             this.box_pmin.Size = new System.Drawing.Size(45, 20);
             this.box_pmin.TabIndex = 10;
@@ -182,45 +167,55 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(16, 353);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label8.Location = new System.Drawing.Point(25, 364);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(62, 13);
+            this.label8.Size = new System.Drawing.Size(91, 16);
             this.label8.TabIndex = 9;
             this.label8.Text = "Modalidade";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(16, 270);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label7.Location = new System.Drawing.Point(25, 281);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(58, 13);
+            this.label7.Size = new System.Drawing.Size(84, 16);
             this.label7.TabIndex = 8;
             this.label7.Text = "Tipo Curso";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 187);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label6.Location = new System.Drawing.Point(25, 198);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 13);
+            this.label6.Size = new System.Drawing.Size(67, 16);
             this.label6.TabIndex = 7;
             this.label6.Text = "Duração";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 107);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label5.Location = new System.Drawing.Point(25, 118);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.Size = new System.Drawing.Size(49, 16);
             this.label5.TabIndex = 6;
             this.label5.Text = "Preço";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 25);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label4.Location = new System.Drawing.Point(25, 36);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.Size = new System.Drawing.Size(49, 16);
             this.label4.TabIndex = 5;
             this.label4.Text = "Nome";
             // 
@@ -231,7 +226,7 @@
             this.box_modalidade.Items.AddRange(new object[] {
             "Cursos Profissionalizantes",
             "Cursos Superiores"});
-            this.box_modalidade.Location = new System.Drawing.Point(16, 389);
+            this.box_modalidade.Location = new System.Drawing.Point(25, 389);
             this.box_modalidade.Margin = new System.Windows.Forms.Padding(2);
             this.box_modalidade.Name = "box_modalidade";
             this.box_modalidade.Size = new System.Drawing.Size(112, 24);
@@ -246,7 +241,7 @@
             "",
             "18 meses",
             "24 meses"});
-            this.box_duracao.Location = new System.Drawing.Point(16, 223);
+            this.box_duracao.Location = new System.Drawing.Point(25, 223);
             this.box_duracao.Margin = new System.Windows.Forms.Padding(2);
             this.box_duracao.Name = "box_duracao";
             this.box_duracao.Size = new System.Drawing.Size(112, 24);
@@ -263,7 +258,7 @@
             "Aprendizagem Industrial",
             "Graduação",
             "Pos/MBA/Mestrado"});
-            this.box_tp.Location = new System.Drawing.Point(16, 306);
+            this.box_tp.Location = new System.Drawing.Point(25, 306);
             this.box_tp.Margin = new System.Windows.Forms.Padding(2);
             this.box_tp.Name = "box_tp";
             this.box_tp.Size = new System.Drawing.Size(112, 24);
@@ -274,7 +269,7 @@
             // 
             this.box_nome.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.box_nome.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.box_nome.Location = new System.Drawing.Point(16, 61);
+            this.box_nome.Location = new System.Drawing.Point(25, 61);
             this.box_nome.Margin = new System.Windows.Forms.Padding(2);
             this.box_nome.Name = "box_nome";
             this.box_nome.Size = new System.Drawing.Size(112, 23);
@@ -330,8 +325,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ComboBox box_modalidade;
         private System.Windows.Forms.ComboBox box_duracao;
@@ -346,5 +339,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox box_pmax;
         private System.Windows.Forms.TextBox box_pmin;
+        private System.Windows.Forms.Label label9;
     }
 }
