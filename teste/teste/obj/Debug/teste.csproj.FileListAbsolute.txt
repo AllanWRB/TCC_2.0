@@ -136,4 +136,5 @@ C:\Users\joaof\Source\Repos\JoaoBird\TCC_2.0\teste\teste\bin\Debug\System.Memory
 C:\Users\joaof\Source\Repos\JoaoBird\TCC_2.0\teste\teste\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\joaof\Source\Repos\JoaoBird\TCC_2.0\teste\teste\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\joaof\Source\Repos\JoaoBird\TCC_2.0\teste\teste\obj\Debug\teste.csproj.CopyComplete
-C:\Users\Aluno\Documents\GitHub\TCC_2.0\teste\teste\obj\Debug\teste.csprojAssemblyReference.cache
+C:\Users\Aluno\Documents\GitHub\TCC_2.0\teste\teste\obj\Debug\teste.csproj.AssemblyReference.cache
+C:\Users\Aluno\Documents\GitHub\TCC_2.0\teste\teste\obj\Debug\teste.csproj.SuggestedBindingRedirects.cache

@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.Common;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -62,8 +63,15 @@ namespace teste
 
         private void cursos_pg_Load(object sender, EventArgs e)
         {
-            //busca(box_nome.Text, box_preco.Text, box_duracao.Text, box_tp.Text, box_modalidade.Text);
+            //MySqlConnection Conexao = con.getconexao();// chama a conexão mysql
+            //Conexao.Open();//abre conexao
+            //string queryBOX = "select carga_horaria,tb_tipo_curso.tipo_curso, tb_modalidade.modalidade from tb_curso inner join tb_tipo_curso on tb_tipo_curso.id_tipo_curso=tb_curso.id_tipo_curso inner join tb_modalidade on tb_modalidade.id_modalidade=tb_curso.id_modalidade";//nome da consulta
+            //MySqlCommand comando = new MySqlCommand(queryBOX, Conexao);//comando sql para montar
+            //MySqlDataReader registro = comando.ExecuteReader();//ler os dados da consulta
+            //registro.Read();
+            //box_duracao.Text = registro.GetString("carga_horaria");
             busca();
+
         }
 
         private void cursosClick(object sender, EventArgs e, int id_curso)
@@ -83,7 +91,7 @@ namespace teste
 
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
-
+            CultureInfo.CurrentCulture = new CultureInfo("en-US", false);
         }
 
         private void B(object sender, EventArgs e)
@@ -96,37 +104,46 @@ namespace teste
         {
             painel_r.Controls.Clear();   
             string query;
+            string opcao;
+             string   opcaops;
             MySqlConnection Conexao = con.getconexao();// chama a conexão mysql
             Conexao.Open();//abre conexao
+            if (box_nome.Text == "" && box_pmin.Text == "" && box_pmax.Text == ""&& box_duracao.Text == "")
+            {
+                query = "select tb_curso.id_curso,tb_curso.nome_curso,tb_curso.preco,tb_tipo_curso.tipo_curso,tb_modalidade.modalidade from tb_curso inner join tb_tipo_curso on tb_tipo_curso.id_tipo_curso=tb_curso.id_tipo_curso inner join tb_modalidade on tb_modalidade.id_modalidade=tb_curso.id_modalidade";
 
+            }
+            else
+            {
+                query = "select tb_curso.id_curso,tb_curso.nome_curso,tb_curso.preco,tb_tipo_curso.tipo_curso,tb_modalidade.modalidade from tb_curso inner join tb_tipo_curso on tb_tipo_curso.id_tipo_curso=tb_curso.id_tipo_curso inner join tb_modalidade on tb_modalidade.id_modalidade=tb_curso.id_modalidade where ";
 
-            query = "select tb_curso.id_curso,tb_curso.nome_curso,tb_curso.preco,tb_tipo_curso.tipo_curso,tb_modalidade.id_modalidade from tb_curso inner join tb_tipo_curso on tb_tipo_curso.id_tipo_curso=tb_curso.id_tipo_curso inner join tb_modalidade on tb_modalidade.id_modalidade=tb_curso.id_modalidade"; 
-            
-            if (box_nome.Text!="" || box_pmin.Text != "" || box_pmax.Text != "" || box_duracao.Text != "" || box_tp.Text != "" || box_modalidade.Text != "")
-            {
-                query += " where nome_curso like  '%" + box_nome.Text + "%'";
-            }
-            if (box_pmin.Text != "")
-            {
-                query += " where preco >" + box_pmin.Text + "";
-            }
-            if (box_pmax.Text != "")
-            {
-                query += " where preco <" + box_pmax.Text + "";
-            }
-            if (box_duracao.Text != "")
-            {
-                query += " where carga_horaria like '%" + box_duracao.Text + "%'";
-            }
-            if (box_tp.Text != "")
-            {
-                query += " where tb_tipo_curso.tipo_curso like '%" + box_tp.Text + "%'";
-            }
-            if (box_modalidade.Text != "")
-            {
-                query += " where tb_modalidade.modalidade like '%" + box_modalidade.Text + "%'";
-            }
+                string min = box_pmin.Text;
+                string max = box_pmax.Text;
+                
+                
+                if (min == "")
+                {
+                    min = "0";
+                }
+                if (max == "")
+                {
+                    max = "999999999";
+                }
 
+                Single n1, n2; 
+                Single.TryParse(min, out n1);
+                Single.TryParse(max, out n2);
+              
+
+                query += " nome_curso like  '%" + box_nome.Text + "%'"+ 
+                    " and carga_horaria like '%" + box_duracao.Text + "%'"+ 
+                    " and preco between " + n1 + " and " + n2+
+                    "and tb_tipo_curso.tipo_curso like '%"+ box_tp.Text+"%'"+
+                    "and tb_modalidade.modalidade like '%"+ box_modalidade.Text+"%'";
+                
+               
+
+            }
 
 
             MySqlCommand comando = new MySqlCommand(query, Conexao);//comando sql para montar
@@ -259,12 +276,18 @@ namespace teste
 
         private void box_modalidade_KeyDown(object sender, KeyEventArgs e)
         {
+
             if (e.KeyCode == Keys.Enter)
             {
 
                 busca();
 
             }
+        }
+
+        private void box_duracao_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
     }
