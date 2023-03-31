@@ -171,7 +171,7 @@
             this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label8.Location = new System.Drawing.Point(25, 364);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(91, 16);
+            this.label8.Size = new System.Drawing.Size(90, 16);
             this.label8.TabIndex = 9;
             this.label8.Text = "Modalidade";
             // 
@@ -182,7 +182,7 @@
             this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label7.Location = new System.Drawing.Point(25, 281);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(84, 16);
+            this.label7.Size = new System.Drawing.Size(83, 16);
             this.label7.TabIndex = 8;
             this.label7.Text = "Tipo Curso";
             // 
@@ -193,7 +193,7 @@
             this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label6.Location = new System.Drawing.Point(25, 198);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 16);
+            this.label6.Size = new System.Drawing.Size(66, 16);
             this.label6.TabIndex = 7;
             this.label6.Text = "Duração";
             // 
@@ -204,7 +204,7 @@
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label5.Location = new System.Drawing.Point(25, 118);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 16);
+            this.label5.Size = new System.Drawing.Size(48, 16);
             this.label5.TabIndex = 6;
             this.label5.Text = "Preço";
             // 
@@ -215,7 +215,7 @@
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label4.Location = new System.Drawing.Point(25, 36);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 16);
+            this.label4.Size = new System.Drawing.Size(48, 16);
             this.label4.TabIndex = 5;
             this.label4.Text = "Nome";
             // 
@@ -238,7 +238,6 @@
             this.box_duracao.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.box_duracao.FormattingEnabled = true;
             this.box_duracao.Items.AddRange(new object[] {
-            "",
             "18 meses",
             "24 meses"});
             this.box_duracao.Location = new System.Drawing.Point(25, 223);
@@ -246,6 +245,7 @@
             this.box_duracao.Name = "box_duracao";
             this.box_duracao.Size = new System.Drawing.Size(112, 24);
             this.box_duracao.TabIndex = 2;
+            this.box_duracao.SelectedIndexChanged += new System.EventHandler(this.box_duracao_SelectedIndexChanged);
             this.box_duracao.KeyDown += new System.Windows.Forms.KeyEventHandler(this.box_duracao_KeyDown);
             // 
             // box_tp
