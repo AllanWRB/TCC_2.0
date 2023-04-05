@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace teste
 {
@@ -86,9 +87,33 @@ namespace teste
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
 
+        private void Form1_Click(object sender, KeyEventArgs e)
+        {
+           
+
+        }
+
+
+        private void Form1_Load(object sender, KeyEventArgs e)
+        {
+         
+
+        }
+
+     
+
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 9)
+            {
+                LoginADM tela_login_ADM = new LoginADM();
+                tela_login_ADM.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("n foi");
+            }
         }
     }
 }

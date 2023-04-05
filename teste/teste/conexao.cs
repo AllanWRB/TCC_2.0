@@ -14,7 +14,7 @@ namespace teste
     {
         //variavel de texto statica privada
         static private string servidor = "localhost";
-        static private string bancodedados = "tcc";
+        static private string bancodedados = "tcc1";
         static private string usuario = "root";
         static private string senha = "";
                              //caminho para a conexao do banco
