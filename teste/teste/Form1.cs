@@ -82,43 +82,16 @@ namespace teste
             this.Close();
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
+    
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-
-        }
-
-
-        private void Form1_Click(object sender, KeyEventArgs e)
-        {
-           
-
-        }
-
-
-        private void Form1_Load(object sender, KeyEventArgs e)
-        {
-         
-
-        }
-
-     
-
-        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == 9)
+            if (e.KeyCode == Keys.F12 && e.Control && e.Shift)
             {
                 LoginADM tela_login_ADM = new LoginADM();
                 tela_login_ADM.ShowDialog();
             }
-            else
-            {
-                MessageBox.Show("n foi");
-            }
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
+           
         }
     }
 }

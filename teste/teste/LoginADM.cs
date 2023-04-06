@@ -43,10 +43,15 @@ namespace teste
                 MessageBox.Show("Bem Vindo");
                 //btn_cursos.Visible = true;
                 Usuario.id_usuario = Convert.ToInt32(registro["id_ADM"]);
+                EdicaoADM editaADM = new EdicaoADM();
+                editaADM.ShowDialog();
 
 
 
-
+            }
+            else 
+            {
+                MessageBox.Show("Senha Incorreta!");
             }
         }
 

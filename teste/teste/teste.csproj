@@ -84,12 +84,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlterarUSU_SEN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlterarUSU_SEN.Designer.cs">
+      <DependentUpon>AlterarUSU_SEN.cs</DependentUpon>
+    </Compile>
     <Compile Include="conexao.cs" />
     <Compile Include="cursos_pg.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="cursos_pg.Designer.cs">
       <DependentUpon>cursos_pg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EdicaoADM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EdicaoADM.Designer.cs">
+      <DependentUpon>EdicaoADM.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -118,8 +130,14 @@
       <DependentUpon>tela_c.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs" />
+    <EmbeddedResource Include="AlterarUSU_SEN.resx">
+      <DependentUpon>AlterarUSU_SEN.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="cursos_pg.resx">
       <DependentUpon>cursos_pg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EdicaoADM.resx">
+      <DependentUpon>EdicaoADM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
