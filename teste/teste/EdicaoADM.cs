@@ -26,13 +26,24 @@ namespace teste
 
         private void btn_Cadastrar_Click(object sender, EventArgs e)
         {
-
+            CadastrarCurso cadastrocurso = new CadastrarCurso(0);
+            cadastrocurso.ShowDialog();
         }
 
         private void btn_Editar_Click(object sender, EventArgs e)
         {
-
+      
+            int index = dataGridView1.CurrentRow.Index;
+            if (index >= 0)
+            {
+                CadastrarCurso cadastrocurso = new CadastrarCurso(Convert.ToInt32(dataGridView1.Rows[index].Cells[0].Value));
+               
+                cadastrocurso.ShowDialog();
+            }
+            
+            
         }
+    
 
         private void btn_Excluir_Click(object sender, EventArgs e)
         {
@@ -82,6 +93,11 @@ namespace teste
         }
 
         private void btn_Deslogar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

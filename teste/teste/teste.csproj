@@ -90,6 +90,12 @@
     <Compile Include="AlterarUSU_SEN.Designer.cs">
       <DependentUpon>AlterarUSU_SEN.cs</DependentUpon>
     </Compile>
+    <Compile Include="CadastrarCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastrarCurso.Designer.cs">
+      <DependentUpon>CadastrarCurso.cs</DependentUpon>
+    </Compile>
     <Compile Include="conexao.cs" />
     <Compile Include="cursos_pg.cs">
       <SubType>Form</SubType>
@@ -132,6 +138,9 @@
     <Compile Include="Usuario.cs" />
     <EmbeddedResource Include="AlterarUSU_SEN.resx">
       <DependentUpon>AlterarUSU_SEN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastrarCurso.resx">
+      <DependentUpon>CadastrarCurso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="cursos_pg.resx">
       <DependentUpon>cursos_pg.cs</DependentUpon>
