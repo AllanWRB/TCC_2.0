@@ -15,7 +15,7 @@ namespace teste
     public partial class CadastrarCurso : Form
     {
         int _puxa_selecao;
-        conexao con = new conexao();
+        conexao conF = new conexao();
         public CadastrarCurso(int puxa_selecao)
         {
             _puxa_selecao = puxa_selecao;
@@ -24,33 +24,23 @@ namespace teste
 
         private void CadastrarCurso_Load(object sender, EventArgs e)
         {
-
-            MySqlConnection Conexao = con.getconexao();// chama a conexão mysql
-            Conexao.Open();//abre conexao
-            string SLCTT = "select id_tipo_curso,tipo_curso from tb_tipo_curso";//nome da consulta
-            MySqlCommand comando = new MySqlCommand(SLCTT, Conexao);//comando sql para montar
-            MySqlDataAdapter adaptador = new MySqlDataAdapter(comando);
-            DataTable tabela = new DataTable();
-            adaptador.Fill(tabela);
-            box_tp.DataSource = tabela;
+            MySqlConnection ConBD = conF.getconexao();// chama a conexão mysql
+            ConBD.Open();//abre conexao
+            Funcoes funcao = new Funcoes(ConBD);
+   
+            box_tp.DataSource = funcao.Fun_tipo_curso();
             box_tp.DisplayMember = "tipo_curso";
             box_tp.ValueMember = "id_tipo_curso";
-            //
-            //
-            string SLCTM = "select id_modalidade,modalidade from tb_modalidade";//nome da consulta
-            MySqlCommand comandoM = new MySqlCommand(SLCTM, Conexao);//comando sql para montar
-            MySqlDataAdapter adaptadorM = new MySqlDataAdapter(comandoM);
-            DataTable tabelaM = new DataTable();
-            adaptadorM.Fill(tabelaM);
-            box_modalidade.DataSource = tabelaM;
+            box_modalidade.DataSource = funcao.Fun_modalidade();
             box_modalidade.DisplayMember = "modalidade";
             box_modalidade.ValueMember = "id_modalidade";
+
             //
             //
             string SLCGR = "select nome_curso,requisitos,profissao,op_trabalho,q_vai_aprender,preco,carga_horaria,tb_tipo_curso." +
                 "id_tipo_curso,tb_modalidade.id_modalidade from tb_curso inner join tb_tipo_curso on tb_tipo_curso.id_tipo_curso=tb_curso.id_tipo_curso" +
                 " inner join tb_modalidade on tb_modalidade.id_modalidade=tb_curso.id_modalidade where id_curso="+_puxa_selecao;//nome da consulta
-            MySqlCommand comandoGR = new MySqlCommand(SLCGR, Conexao);//comando sql para montar
+            MySqlCommand comandoGR = new MySqlCommand(SLCGR, ConBD);//comando sql para montar
             MySqlDataReader registro = comandoGR.ExecuteReader();//ler os dados da consulta
             if (registro.Read())
             {
@@ -70,7 +60,7 @@ namespace teste
 
         private void btn_enviar_Click(object sender, EventArgs e)
         {
-            MySqlConnection Conexao = con.getconexao();// chama a conexão mysql
+            MySqlConnection Conexao = conF.getconexao();// chama a conexão mysql
             Conexao.Open();//abre conexao
             
             string query = "insert into tb_curso values (default,@nome_curso,@requisitos,@profissao,@op_trabalho,@q_vai_aprender,@preco,@carga_horaria,@id_tipo_curso,@id_modalidade) ";//nome da consulta   
@@ -92,6 +82,11 @@ namespace teste
             comando3.Parameters.AddWithValue("@id_modalidade", box_modalidade.SelectedValue);
             comando3.ExecuteNonQuery();//ler os dados da consulta
             MessageBox.Show("Cadastrado com sucesso!", "AVISO", MessageBoxButtons.OK);
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

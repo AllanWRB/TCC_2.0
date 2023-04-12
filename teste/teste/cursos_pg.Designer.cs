@@ -224,9 +224,6 @@
             // 
             this.box_modalidade.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.box_modalidade.FormattingEnabled = true;
-            this.box_modalidade.Items.AddRange(new object[] {
-            "Cursos Profissionalizantes",
-            "Cursos Superiores"});
             this.box_modalidade.Location = new System.Drawing.Point(25, 389);
             this.box_modalidade.Margin = new System.Windows.Forms.Padding(2);
             this.box_modalidade.Name = "box_modalidade";
@@ -238,9 +235,6 @@
             // 
             this.box_duracao.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.box_duracao.FormattingEnabled = true;
-            this.box_duracao.Items.AddRange(new object[] {
-            "18 meses",
-            "24 meses"});
             this.box_duracao.Location = new System.Drawing.Point(25, 223);
             this.box_duracao.Margin = new System.Windows.Forms.Padding(2);
             this.box_duracao.Name = "box_duracao";
@@ -253,12 +247,6 @@
             // 
             this.box_tp.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.box_tp.FormattingEnabled = true;
-            this.box_tp.Items.AddRange(new object[] {
-            "Curso Técnico",
-            "Curso Rapido",
-            "Aprendizagem Industrial",
-            "Graduação",
-            "Pos/MBA/Mestrado"});
             this.box_tp.Location = new System.Drawing.Point(25, 306);
             this.box_tp.Margin = new System.Windows.Forms.Padding(2);
             this.box_tp.Name = "box_tp";

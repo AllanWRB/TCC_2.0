@@ -63,13 +63,17 @@ namespace teste
 
         private void cursos_pg_Load(object sender, EventArgs e)
         {
-            //MySqlConnection Conexao = con.getconexao();// chama a conexão mysql
-            //Conexao.Open();//abre conexao
-            //string queryBOX = "select carga_horaria,tb_tipo_curso.tipo_curso, tb_modalidade.modalidade from tb_curso inner join tb_tipo_curso on tb_tipo_curso.id_tipo_curso=tb_curso.id_tipo_curso inner join tb_modalidade on tb_modalidade.id_modalidade=tb_curso.id_modalidade";//nome da consulta
-            //MySqlCommand comando = new MySqlCommand(queryBOX, Conexao);//comando sql para montar
-            //MySqlDataReader registro = comando.ExecuteReader();//ler os dados da consulta
-            //registro.Read();
-            //box_duracao.Text = registro.GetString("carga_horaria");
+
+            Funcoes funcao_box= new Funcoes(con.getconexao());
+            box_tp.DataSource = funcao_box.Fun_tipo_curso();
+            box_tp.DisplayMember = "tipo_curso";
+            box_tp.ValueMember = "id_tipo_curso";
+            box_modalidade.DataSource = funcao_box.Fun_modalidade();
+            box_modalidade.DisplayMember = "modalidade";
+            box_modalidade.ValueMember = "id_modalidade";
+            
+
+
             busca();
 
         }
