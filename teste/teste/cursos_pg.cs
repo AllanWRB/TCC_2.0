@@ -71,7 +71,11 @@ namespace teste
             box_modalidade.DataSource = funcao_box.Fun_modalidade();
             box_modalidade.DisplayMember = "modalidade";
             box_modalidade.ValueMember = "id_modalidade";
-            
+            box_duracao.DataSource = funcao_box.Fun_duracao();
+            box_duracao.DisplayMember = "carga_horaria";
+
+
+
 
 
             busca();
@@ -142,8 +146,8 @@ namespace teste
                 query += " nome_curso like  '%" + box_nome.Text + "%'"+ 
                     " and carga_horaria like '%" + box_duracao.Text + "%'"+ 
                     " and preco between " + n1 + " and " + n2+
-                    "and tb_tipo_curso.tipo_curso like '%"+ box_tp.Text+"%'"+
-                    "and tb_modalidade.modalidade like '%"+ box_modalidade.Text+"%'";
+                    " and tb_tipo_curso.tipo_curso like '%"+ box_tp.Text+"%'"+
+                    " and tb_modalidade.modalidade like '%"+ box_modalidade.Text+"%'";
                 
                
 
@@ -295,6 +299,11 @@ namespace teste
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void painel_r_Paint(object sender, PaintEventArgs e)
         {
 
         }
