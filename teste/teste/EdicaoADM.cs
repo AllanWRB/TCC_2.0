@@ -58,6 +58,7 @@ namespace teste
             DialogResult Ok = MessageBox.Show("Tem certeza que deseja excluir o registro selecionado?", "AVISO", MessageBoxButtons.OKCancel);
             if (Ok == DialogResult.OK )
             {
+                
                 comando.ExecuteNonQuery();
                 puxa_dados();
             }
@@ -76,6 +77,7 @@ namespace teste
         }
         public void puxa_dados()
         {
+            dataGridView1.Refresh();
             MySqlConnection Conexao = con.getconexao();// chama a conexão mysql
             Conexao.Open();//abre conexao
             string SLCT = "select id_curso,nome_curso,preco,carga_horaria from tb_curso";//nome da consulta
@@ -98,6 +100,11 @@ namespace teste
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

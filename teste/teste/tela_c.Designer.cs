@@ -70,7 +70,7 @@
             this.lbl_req.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lbl_req.Location = new System.Drawing.Point(15, 425);
             this.lbl_req.Name = "lbl_req";
-            this.lbl_req.Size = new System.Drawing.Size(77, 16);
+            this.lbl_req.Size = new System.Drawing.Size(76, 16);
             this.lbl_req.TabIndex = 1;
             this.lbl_req.Text = "Requisitos:";
             // 
@@ -99,29 +99,29 @@
             this.lbl_aprender.Location = new System.Drawing.Point(41, 530);
             this.lbl_aprender.Name = "lbl_aprender";
             this.lbl_aprender.Padding = new System.Windows.Forms.Padding(0, 0, 0, 50);
-            this.lbl_aprender.Size = new System.Drawing.Size(122, 66);
+            this.lbl_aprender.Size = new System.Drawing.Size(121, 66);
             this.lbl_aprender.TabIndex = 4;
             this.lbl_aprender.Text = "Grade Curricular: ";
             // 
             // lbl_preco
             // 
             this.lbl_preco.AutoSize = true;
-            this.lbl_preco.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_preco.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_preco.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lbl_preco.Location = new System.Drawing.Point(14, 53);
             this.lbl_preco.Name = "lbl_preco";
-            this.lbl_preco.Size = new System.Drawing.Size(89, 19);
+            this.lbl_preco.Size = new System.Drawing.Size(81, 18);
             this.lbl_preco.TabIndex = 5;
             this.lbl_preco.Text = "Preço: R$ ";
             // 
             // lbl_hora
             // 
             this.lbl_hora.AutoSize = true;
-            this.lbl_hora.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_hora.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_hora.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lbl_hora.Location = new System.Drawing.Point(12, 22);
             this.lbl_hora.Name = "lbl_hora";
-            this.lbl_hora.Size = new System.Drawing.Size(123, 19);
+            this.lbl_hora.Size = new System.Drawing.Size(112, 18);
             this.lbl_hora.TabIndex = 6;
             this.lbl_hora.Text = "Carga horária: ";
             // 
@@ -269,19 +269,19 @@
             this.panel2.Controls.Add(this.lbl_hora);
             this.panel2.Controls.Add(this.lbl_preco);
             this.panel2.Controls.Add(this.lbl_req);
-            this.panel2.Location = new System.Drawing.Point(835, 90);
+            this.panel2.Location = new System.Drawing.Point(821, 90);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 506);
+            this.panel2.Size = new System.Drawing.Size(214, 506);
             this.panel2.TabIndex = 13;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label6.Location = new System.Drawing.Point(14, 395);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 19);
+            this.label6.Size = new System.Drawing.Size(88, 18);
             this.label6.TabIndex = 7;
             this.label6.Text = "Requisitos:";
             // 

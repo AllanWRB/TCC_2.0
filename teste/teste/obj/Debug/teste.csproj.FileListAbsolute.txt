@@ -142,7 +142,14 @@ C:\Users\joaof\source\repos\JoaoBird\TCC_2.0\teste\teste\obj\Debug\teste.LoginAD
 C:\Users\joaof\source\repos\JoaoBird\TCC_2.0\teste\teste\obj\Debug\teste.EdicaoADM.resources
 C:\Users\joaof\Source\Repos\JoaoBird\TCC_2.0\teste\teste\obj\Debug\teste.AlterarUSU_SEN.resources
 C:\Users\joaof\Source\Repos\JoaoBird\TCC_2.0\teste\teste\obj\Debug\teste.CadastrarCurso.resources
+<<<<<<< HEAD
 C:\Users\joaof\OneDrive\Documentos\GitHub\TCC_2.0\teste\teste\obj\Debug\teste.AlterarUSU_SEN.resources
 C:\Users\joaof\OneDrive\Documentos\GitHub\TCC_2.0\teste\teste\obj\Debug\teste.CadastrarCurso.resources
 C:\Users\joaof\OneDrive\Documentos\GitHub\TCC_2.0\teste\teste\obj\Debug\teste.EdicaoADM.resources
 C:\Users\joaof\OneDrive\Documentos\GitHub\TCC_2.0\teste\teste\obj\Debug\teste.LoginADM.resources
+=======
+C:\Users\Aluno\Documents\GitHub\TCC_2.0\teste\teste\obj\Debug\teste.AlterarUSU_SEN.resources
+C:\Users\Aluno\Documents\GitHub\TCC_2.0\teste\teste\obj\Debug\teste.CadastrarCurso.resources
+C:\Users\Aluno\Documents\GitHub\TCC_2.0\teste\teste\obj\Debug\teste.EdicaoADM.resources
+C:\Users\Aluno\Documents\GitHub\TCC_2.0\teste\teste\obj\Debug\teste.LoginADM.resources
+>>>>>>> 4ae51c12a74b2573160c2483d9cb63ac544dd9d9
