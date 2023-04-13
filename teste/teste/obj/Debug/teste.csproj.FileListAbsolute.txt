@@ -142,3 +142,7 @@ C:\Users\joaof\source\repos\JoaoBird\TCC_2.0\teste\teste\obj\Debug\teste.LoginAD
 C:\Users\joaof\source\repos\JoaoBird\TCC_2.0\teste\teste\obj\Debug\teste.EdicaoADM.resources
 C:\Users\joaof\Source\Repos\JoaoBird\TCC_2.0\teste\teste\obj\Debug\teste.AlterarUSU_SEN.resources
 C:\Users\joaof\Source\Repos\JoaoBird\TCC_2.0\teste\teste\obj\Debug\teste.CadastrarCurso.resources
+C:\Users\joaof\OneDrive\Documentos\GitHub\TCC_2.0\teste\teste\obj\Debug\teste.AlterarUSU_SEN.resources
+C:\Users\joaof\OneDrive\Documentos\GitHub\TCC_2.0\teste\teste\obj\Debug\teste.CadastrarCurso.resources
+C:\Users\joaof\OneDrive\Documentos\GitHub\TCC_2.0\teste\teste\obj\Debug\teste.EdicaoADM.resources
+C:\Users\joaof\OneDrive\Documentos\GitHub\TCC_2.0\teste\teste\obj\Debug\teste.LoginADM.resources
