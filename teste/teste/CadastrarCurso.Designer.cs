@@ -238,12 +238,17 @@
             // 
             // btn_enviar
             // 
-            this.btn_enviar.Location = new System.Drawing.Point(517, 634);
+            this.btn_enviar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btn_enviar.FlatAppearance.BorderSize = 0;
+            this.btn_enviar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_enviar.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_enviar.ForeColor = System.Drawing.Color.White;
+            this.btn_enviar.Location = new System.Drawing.Point(503, 634);
             this.btn_enviar.Name = "btn_enviar";
-            this.btn_enviar.Size = new System.Drawing.Size(75, 23);
+            this.btn_enviar.Size = new System.Drawing.Size(89, 35);
             this.btn_enviar.TabIndex = 27;
             this.btn_enviar.Text = "Enviar";
-            this.btn_enviar.UseVisualStyleBackColor = true;
+            this.btn_enviar.UseVisualStyleBackColor = false;
             this.btn_enviar.Click += new System.EventHandler(this.btn_enviar_Click);
             // 
             // CadastrarCurso
