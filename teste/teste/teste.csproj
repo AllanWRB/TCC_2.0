@@ -128,6 +128,9 @@
     <Compile Include="LoginADM.Designer.cs">
       <DependentUpon>LoginADM.cs</DependentUpon>
     </Compile>
+    <Compile Include="PanelArredondado.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tela_c.cs">

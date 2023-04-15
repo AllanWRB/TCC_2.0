@@ -17,6 +17,12 @@ namespace teste
 {
     public partial class cursos_pg : Form
     {
+        Font SuperMiniFont = new Font("Arial", 8, FontStyle.Bold);
+        Font MiniFont = new Font("Arial", 10, FontStyle.Bold | FontStyle.Underline);
+        Font SmallFont = new Font("Arial", 14);
+        Font MediumFont = new Font("Arial", 16, FontStyle.Bold | FontStyle.Italic);
+        
+
         int id_cursod;
         conexao con = new conexao();
         public cursos_pg()
@@ -74,9 +80,9 @@ namespace teste
             box_duracao.DataSource = funcao_box.Fun_duracao();
             box_duracao.DisplayMember = "carga_horaria";
 
-
-
-
+            box_modalidade.Text = "";
+            box_duracao.Text = "";
+            box_tp.Text = "";
 
             busca();
 
@@ -91,9 +97,14 @@ namespace teste
 
         }
 
-        public void espaco(Label label,int pos)
+        public void espacoy(Label label,int pos)
         {
             label.Location = new Point(label.Location.X, (label.Location.Y + pos));
+            label.Refresh();
+        }
+        public void espacox(Label label, int pos)
+        {
+            label.Location = new Point(label.Location.X + pos, (label.Location.Y));
             label.Refresh();
         }
 
@@ -165,37 +176,46 @@ namespace teste
                 {
 
 
-                    Panel cursos = new Panel()
-                    {
-                        BorderStyle = BorderStyle.FixedSingle,
-                        AutoSize = true,
+                Panel cursos = new Panel()
+                {
+                    BorderStyle = BorderStyle.FixedSingle,
+                    Size = new Size(868, 150),
                     };
                     Label lbl_cursod = new Label()
                     {
 
                     };
 
-                    Label Lnome_curso = new Label()
+                Label Lnome_curso = new Label()
 
-                    {
-                        AutoSize = true
+                {
+                    AutoSize = true,
+                    Font = MediumFont, 
 
                     };
                     Label Lpreco = new Label()
 
                     {
                         AutoSize = true,
-
+                        Font = SmallFont,
 
                     };
                     Label Ltipo_curso = new Label()
 
                     {
-                        AutoSize = true
+                        AutoSize = true,
+                        Font = SmallFont,
+
+                    };
+                    Label Lmodalidade = new Label()
+
+                    {
+                        AutoSize = true,
+                        Font = SmallFont,
 
                     };
 
-                    Button curso_pg = new Button()
+                Button curso_pg = new Button()
 
                     {
                         AutoSize = true
@@ -204,6 +224,7 @@ namespace teste
                     id_cursod = Convert.ToInt32(registro.GetInt32("id_curso"));
                     lbl_cursod.Text = id_cursod.ToString();
                     Lnome_curso.Text = registro.GetString("nome_curso");
+                    Lmodalidade.Text = registro.GetString("modalidade");
 
                     cursos.Click += new EventHandler((sender1, e1) => cursosClick(sender1, e1, Convert.ToInt32(lbl_cursod.Text)));
 
@@ -215,17 +236,26 @@ namespace teste
 
 
 
-                    Lpreco.Text = Convert.ToString(registro.GetDecimal("preco"));
+                    Lpreco.Text = "R$ "+Convert.ToString(registro.GetDecimal("preco"));
                     Ltipo_curso.Text = registro.GetString("tipo_curso");
+                    espacoy(Lnome_curso, 20);
+                    espacox(Lnome_curso, 10);
                     cursos.Controls.Add(Lnome_curso);
 
-                    espaco(Lpreco, 25);
+                    espacoy(Lpreco, 105);
+                    espacox(Lpreco, 10);
                     //preco.Location = new Point((int)preco.Location.X, (int)(preco.Location.Y - 50));
 
                     cursos.Controls.Add(Lpreco);
 
                     cursos.Controls.Add(Ltipo_curso);
-                    espaco(Ltipo_curso, 50);
+                    espacoy(Ltipo_curso, 65);
+                    espacox(Ltipo_curso, 400);
+
+                    cursos.Controls.Add(Lmodalidade);
+                    espacoy(Lmodalidade, 65);
+                    espacox(Lmodalidade, 10);
+
                     painel_r.Controls.Add(cursos);
                 }
             Conexao.Close();
@@ -306,6 +336,16 @@ namespace teste
         private void painel_r_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void label10_MouseHover(object sender, EventArgs e)
+        {
+            label10.Font = MiniFont;
+        }
+
+        private void label10_MouseLeave(object sender, EventArgs e)
+        {
+            label10.Font = SuperMiniFont;
         }
     }
     }

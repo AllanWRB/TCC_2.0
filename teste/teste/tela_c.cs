@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,11 @@ namespace teste
 {
     public partial class tela_c : Form
     {
+        Font SuperMiniFont = new Font("Arial", 8, FontStyle.Bold);
+        Font MiniFont = new Font("Arial", 10, FontStyle.Bold | FontStyle.Underline);
+        Font SmallFont = new Font("Arial", 24, FontStyle.Bold);
+        Font MediumFont = new Font("Arial", 26, FontStyle.Bold | FontStyle.Underline);
+
         int _id_curso; 
         conexao con = new conexao();
         public tela_c(int id_curso)
@@ -65,8 +71,23 @@ namespace teste
             lbl_modalidade.Text = registro.GetString("modalidade");
             registro.Close();
             Conexao.Close();
-        }
 
+        }
+        //protected override void OnPaint(PaintEventArgs e)
+        //{
+        //    Point[] myArray =
+        // {
+        //    new Point(20,100),
+        //    new Point(40,100),
+        //    new Point(20,250),
+        //    new Point(40,250),
+           
+        // };
+        //    GraphicsPath Forma = new GraphicsPath();
+            
+        //    Forma.AddClosedCurve(myArray,.3f);
+        //    panel2.Region=new   Region( Forma);
+        //}
         private void label12_Click_1(object sender, EventArgs e)
         {
             System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(abre_cursos));
@@ -79,6 +100,26 @@ namespace teste
             System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(abre_home));
             t.Start();
             this.Close();
+        }
+
+        private void label10_MouseHover(object sender, EventArgs e)
+        {
+            label10.Font = MiniFont;
+        }
+
+        private void label10_MouseLeave(object sender, EventArgs e)
+        {
+            label10.Font = SuperMiniFont;
+        }
+
+        private void label12_MouseHover(object sender, EventArgs e)
+        {
+            label12.Font = MiniFont;
+        }
+
+        private void label12_MouseLeave(object sender, EventArgs e)
+        {
+            label12.Font = SuperMiniFont;
         }
     }
 }

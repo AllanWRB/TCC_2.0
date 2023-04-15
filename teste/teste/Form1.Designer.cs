@@ -30,15 +30,16 @@ namespace teste
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.panelArredondado2 = new teste.PanelArredondado();
+            this.panelArredondado1 = new teste.PanelArredondado();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -48,12 +49,13 @@ namespace teste
             // 
             this.panel2.BackColor = System.Drawing.Color.RoyalBlue;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.panelArredondado1);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(94, 107);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(350, 550);
             this.panel2.TabIndex = 2;
+<<<<<<< HEAD
             // 
             // panel3
             // 
@@ -65,6 +67,8 @@ namespace teste
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(350, 456);
             this.panel3.TabIndex = 1;
+=======
+>>>>>>> 9b2d0ad9082e6440b79d0ecf489c5951a5eefeb0
             // 
             // label2
             // 
@@ -84,23 +88,12 @@ namespace teste
             // 
             this.panel4.BackColor = System.Drawing.Color.RoyalBlue;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.panel5);
+            this.panel4.Controls.Add(this.panelArredondado2);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Location = new System.Drawing.Point(620, 107);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(350, 550);
             this.panel4.TabIndex = 3;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.BackgroundImage = global::teste.Properties.Resources.foto_CD6_15435073831;
-            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Location = new System.Drawing.Point(-1, 93);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(350, 456);
-            this.panel5.TabIndex = 1;
             // 
             // label3
             // 
@@ -149,6 +142,36 @@ namespace teste
             this.label1.TabIndex = 0;
             this.label1.Text = "SENAI";
             // 
+            // panelArredondado2
+            // 
+            this.panelArredondado2.BackColor = System.Drawing.Color.White;
+            this.panelArredondado2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelArredondado2.BackgroundImage")));
+            this.panelArredondado2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelArredondado2.BorderRadius = 30;
+            this.panelArredondado2.ForeColor = System.Drawing.Color.Black;
+            this.panelArredondado2.GradientAngle = 0F;
+            this.panelArredondado2.GradientBottomColor = System.Drawing.Color.Transparent;
+            this.panelArredondado2.GradientTopColor = System.Drawing.Color.Transparent;
+            this.panelArredondado2.Location = new System.Drawing.Point(12, 93);
+            this.panelArredondado2.Name = "panelArredondado2";
+            this.panelArredondado2.Size = new System.Drawing.Size(323, 440);
+            this.panelArredondado2.TabIndex = 6;
+            // 
+            // panelArredondado1
+            // 
+            this.panelArredondado1.BackColor = System.Drawing.Color.White;
+            this.panelArredondado1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelArredondado1.BackgroundImage")));
+            this.panelArredondado1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelArredondado1.BorderRadius = 30;
+            this.panelArredondado1.ForeColor = System.Drawing.Color.Black;
+            this.panelArredondado1.GradientAngle = 0F;
+            this.panelArredondado1.GradientBottomColor = System.Drawing.Color.Transparent;
+            this.panelArredondado1.GradientTopColor = System.Drawing.Color.Transparent;
+            this.panelArredondado1.Location = new System.Drawing.Point(12, 93);
+            this.panelArredondado1.Name = "panelArredondado1";
+            this.panelArredondado1.Size = new System.Drawing.Size(323, 440);
+            this.panelArredondado1.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -160,7 +183,10 @@ namespace teste
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+<<<<<<< HEAD
             this.Load += new System.EventHandler(this.Form1_Load);
+=======
+>>>>>>> 9b2d0ad9082e6440b79d0ecf489c5951a5eefeb0
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -174,14 +200,14 @@ namespace teste
 
         #endregion
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label1;
+        private PanelArredondado panelArredondado2;
+        private PanelArredondado panelArredondado1;
     }
 }
 
