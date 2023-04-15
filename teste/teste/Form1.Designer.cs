@@ -54,7 +54,6 @@ namespace teste
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(350, 550);
             this.panel2.TabIndex = 2;
-    
             // 
             // panel3
             // 
@@ -161,9 +160,8 @@ namespace teste
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-         
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
-  
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
