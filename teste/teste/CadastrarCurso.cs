@@ -66,7 +66,7 @@ namespace teste
             string query = "insert into tb_curso values (default,@nome_curso,@requisitos,@profissao,@op_trabalho,@q_vai_aprender,@preco,@carga_horaria,@id_tipo_curso,@id_modalidade) ";//nome da consulta   
             if (_puxa_selecao != 0)
             {
-                 query = "UPDATE  tb_curso set @nome_curso=@nome_curso,@requisitos=@requisitos,@profissao=@profissao,@op_trabalho=@op_trabalho,@q_vai_aprender=@q_vai_aprender,@preco=@preco,@carga_horaria=@carga_horaria,@id_tipo_curso=@id_tipo_curso,@id_modalidade=@id_modalidade where id_curso =@ "+this._puxa_selecao;//nome da consulta   
+                 query = "UPDATE  tb_curso set nome_curso=@nome_curso,requisitos=@requisitos,profissao=@profissao,op_trabalho=@op_trabalho,q_vai_aprender=@q_vai_aprender,preco=@preco,carga_horaria=@carga_horaria,id_tipo_curso=@id_tipo_curso,id_modalidade=@id_modalidade where id_curso =  "+this._puxa_selecao;//nome da consulta   
 
             }
             MySqlCommand comando3 = new MySqlCommand(query, Conexao);//comando sql para montar

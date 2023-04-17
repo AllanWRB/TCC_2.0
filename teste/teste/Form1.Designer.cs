@@ -55,20 +55,11 @@ namespace teste
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(350, 550);
             this.panel2.TabIndex = 2;
-<<<<<<< HEAD
+
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.BackgroundImage = global::teste.Properties.Resources.profissionaldeticurso__1_1;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Location = new System.Drawing.Point(-1, 93);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(350, 456);
-            this.panel3.TabIndex = 1;
-=======
->>>>>>> 9b2d0ad9082e6440b79d0ecf489c5951a5eefeb0
+
             // 
             // label2
             // 
@@ -183,10 +174,9 @@ namespace teste
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-<<<<<<< HEAD
+
             this.Load += new System.EventHandler(this.Form1_Load);
-=======
->>>>>>> 9b2d0ad9082e6440b79d0ecf489c5951a5eefeb0
+
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
