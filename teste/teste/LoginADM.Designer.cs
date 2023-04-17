@@ -62,6 +62,7 @@
             this.box_login.Name = "box_login";
             this.box_login.Size = new System.Drawing.Size(100, 20);
             this.box_login.TabIndex = 2;
+            this.box_login.TextChanged += new System.EventHandler(this.box_login_TextChanged);
             // 
             // box_senha
             // 

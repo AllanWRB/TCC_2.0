@@ -59,5 +59,10 @@ namespace teste
         {
 
         }
+
+        private void box_login_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
